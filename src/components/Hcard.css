@@ -1,8 +1,10 @@
 .Hcard{
-    margin: 9px;
-    padding: 12px;
+    margin: 16px;
+    padding:20px;
     border-radius: 17px;
-    box-shadow: 1px 2px 3px 2px gray;
+    box-shadow: 1px 2px 3px 2px gray; 
+    display: flex;
+    flex-direction: column;
 
 }
 .Hcard:hover {
@@ -15,17 +17,10 @@
    color:darkgreen;
    text-transform: uppercase;
 }
-.Hcard .container {
+.Hcard .container{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     color: whitesmoke;
 }
-@media only screen and (max-width: 1630px) {
-    .Header {
-      grid-template-columns: 50% ;
-      grid-template-rows: 50% ;    
-      
-    }
-  }

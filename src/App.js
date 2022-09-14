@@ -2,6 +2,7 @@ import './App.css';
 import Hcard from './components/Hcard';
 import React from 'react';
 import Header from './components/Header';
+import { Container } from 'react-bootstrap';
 
 function App() {
   const [finalData, setFinalData] = React.useState([]);
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
     <Header/>
+    <Container fluid>
     <div className="App">
       {finalData.map(item => {
         return <Hcard data={item} />
@@ -39,6 +41,7 @@ function App() {
       <button onClick={nextPage}>Next</button>
 
     </div>
+    </Container>
     </>
   );
 }
