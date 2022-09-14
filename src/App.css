@@ -1,5 +1,13 @@
+:root {
+  background-color:black;
+}
 .App {
   text-align: center;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  
 }
 
 .App-logo {
@@ -23,6 +31,26 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+.Buttons {
+  height: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 12px;
+
+}
+.Buttons button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: greenyellow;
+  font-weight: 900;
+  box-shadow:3px 3px 2px gray ;
+  border-radius: 18px;
+}
+
+
 
 .App-link {
   color: #61dafb;

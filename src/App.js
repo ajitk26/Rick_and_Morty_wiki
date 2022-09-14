@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import Hcard from './components/Hcard';
+import React from 'react';
+import Header from './components/Header';
 
 function App() {
+  const [finalData, setFinalData] = React.useState([]);
+  const [currentPage, setCurrentPage] = React.useState(1);
+
+  React.useEffect(() => {
+    async function loadApi() {
+      let response = await fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
+      let data = await response.json();
+      // console.log(data.results);
+      setFinalData(data.results);
+    };
+    loadApi();
+  }, [currentPage]);
+
+  function nextPage() {
+    setCurrentPage(prev => prev+1);
+  }
+  function prevPage(){
+    setCurrentPage(prev=>prev-1);
+  }
+  // console.log(finalData.map(item => console.log(item)));
   return (
+    <>
+    <Header/>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {finalData.map(item => {
+        return <Hcard data={item} />
+      })}
+      
+      {/* <Card data={finalData} /> */}
     </div>
+    <div className='Buttons'>
+      <button onClick={prevPage}>Previous</button>
+      <button onClick={nextPage}>Next</button>
+
+    </div>
+    </>
   );
 }
 

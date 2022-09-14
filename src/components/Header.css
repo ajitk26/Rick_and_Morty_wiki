@@ -1,0 +1,9 @@
+.Header{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: greenyellow;
+    font-size: 40px;
+    font-weight: 800;
+    text-shadow: 2px 4px 8px gray;
+}
