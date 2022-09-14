@@ -7,3 +7,10 @@
     font-weight: 800;
     text-shadow: 2px 4px 8px gray;
 }
+@media only screen and (max-width: 1630px) {
+    .Header {
+      grid-template-columns: 50% ;
+      grid-template-rows: 50% ;    
+      
+    }
+  }
